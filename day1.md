@@ -3,6 +3,7 @@
 In SQL, data is stored in TABLEs that are made up of COLUMNs and ROWs. A row represents one entity within the table whereas a column is a specific property of that data. IE:
 
 **User**
+
 | id | name | email |
 |---|--------|------|
 | 1 | Mitch | mdzugan@smash.gg |
@@ -108,7 +109,7 @@ select * from Movie ORDER BY year ASC
 # LIMIT
 `LIMIT` (or `TOP` in some other implementations of SQL) restricts the amount of rows in the result. **Typically used in combination with `ORDER BY`** to get the top/bottom N results of a question. IE:
 
-** What are the 5 oldest movies in our database?**
+**What are the 5 oldest movies in our database?**
 ```
 select * from Movie ORDER BY year ASC limit 5
 ```
@@ -178,5 +179,4 @@ WHERE User.name = 'Keef'
 ORDER BY UserMovieReview.reviewDate DESC
 LIMIT 10
 ```
-I think if you can really understand the differences between those 2 queries, and how their results are different, then you are basically SQL master lol.
-
+I think if you can really understand the differences between those 2 queries, and how their results are different, then you are basically SQL master lol. To understand the difference it results btw it probably helps to know that in the database, Keith follows everyone but me and Justin do not follow him.
