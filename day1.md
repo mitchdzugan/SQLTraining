@@ -180,3 +180,5 @@ ORDER BY UserMovieReview.reviewDate DESC
 LIMIT 10
 ```
 I think if you can really understand the differences between those 2 queries, and how their results are different, then you are basically SQL master lol. To understand the difference it results btw it probably helps to know that in the database, Keith follows everyone but me and Justin do not follow him.
+
+test
