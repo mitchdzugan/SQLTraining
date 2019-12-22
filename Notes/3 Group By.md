@@ -35,7 +35,7 @@ Above we used the `AVG` aggregate to get an average of all of the star values in
 * `min(...)`: gets the minimum of all values for column `...` in the group
 * `max(...)`: gets the maximum of all values for column `...` in the group
 
-Additionally instead of putting a column in any of the `...`s you can put `distinct(...)` where `...` is a column. Each aggregate function would work the same way but it would ignore duplicate values within a group. This is most useful for `count` when you want to get a count of the number of unique instances of something but potentially has applications for `average`/`sum` if you only wanted to do those calculations on the unique values though I can't think of a practical example and have never done so.
+Additionally instead of putting a column in any of the `...`s you can put `distinct(...)` where `...` is a column. Each aggregate function would work the same way but it would ignore duplicate values within a group. This is most useful for `count` when you want to get a count of the number of unique instances of something but potentially has applications for `average`/`sum` if you only wanted to do those calculations on the unique values in the group though I can't think of a practical example and have never done so.
 
 Also note that in our first lesson we saw you can use `aggregate` functions outside of `group by`s and in that case, instead of reducing groupings into a single value for each grouped row, they reduce the entire output into a single row value. ie:
 ```sql
@@ -69,9 +69,9 @@ SQL's syntax generally helps us remember this by the order of the syntax. The on
 
 ```SQL
 SELECT Movie.id, Movie.name, AVG(UserMovieReview.stars)   /* <- CAN use aggregates */
-	FROM Movie
+    FROM Movie
 INNER JOIN UserMovieReview on
-	Movie.Id = UserMovieReview.movieId                /* <- CANNOT use aggregates */
+    Movie.Id = UserMovieReview.movieId                    /* <- CANNOT use aggregates */
 INNER JOIN User on User.Id = UserMovieReview.userId       /* <- CANNOT use aggregates */
 WHERE User.name != 'Adam'                                 /* <- CANNOT use aggregates */
 GROUP BY Movie.id
