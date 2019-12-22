@@ -1,3 +1,5 @@
+This imgur album has screenshots for all of the answers to these so you can check you work: https://imgur.com/a/2YMkLFc
+
 ## Challenge Exercises!
 1. (MovieReviewsDemo)
 For each user in the database, find the number of people that are following them. Output columns should be:
